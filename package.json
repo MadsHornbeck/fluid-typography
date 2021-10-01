@@ -1,0 +1,29 @@
+{
+  "name": "@hornbeck/fluid-typography",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Mads Hornbeck",
+    "email": "madshornbeck@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MadsHornbeck/fluid-typography.git"
+  },
+  "description": "Simple configurable fluid typography and dynamic modular font scale in pure css.",
+  "keywords": [
+    "css",
+    "fluid typography",
+    "modular scale",
+    "font",
+    "font-size"
+  ],
+  "main": "style.css",
+  "style": "style.css",
+  "files": [
+    "style.css"
+  ]
+}

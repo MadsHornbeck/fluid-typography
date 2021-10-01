@@ -1,0 +1,60 @@
+:root {
+  --f-width-sm: 24; /* em */
+  --f-width-lg: 90; /* em */
+  --f-font-sm: 1; /* rem */
+  --f-font-lg: 1.5; /* rem */
+  --f-ratio-sm: 1.125;
+  --f-ratio-lg: 1.25;
+}
+
+:root {
+  --f-screen: clamp(var(--f-width-sm) * 1em, 100vmin, var(--f-width-lg) * 1em);
+  --f-lerp: calc(
+    (var(--f-screen) - (var(--f-width-sm) * 1em)) /
+      (var(--f-width-lg) - var(--f-width-sm))
+  );
+  font-size: calc(
+    var(--f-font-sm) * 1em + (var(--f-font-lg) - var(--f-font-sm)) *
+      var(--f-lerp)
+  );
+  min-height: 0vw; /* Safari fix */
+
+  --f-font-ratio: min(
+    var(--f-lerp) * var(--f-ratio-lg) * var(--f-font-lg),
+    1rem
+  );
+
+  --f-sm-1: var(--f-ratio-sm);
+  --f-sm-2: var(--f-ratio-sm) * var(--f-sm-1);
+  --f-sm-3: var(--f-ratio-sm) * var(--f-sm-2);
+  --f-sm-4: var(--f-ratio-sm) * var(--f-sm-3);
+  --f-sm-5: var(--f-ratio-sm) * var(--f-sm-4);
+  --f-sm-6: var(--f-ratio-sm) * var(--f-sm-5);
+
+  --f-lg-1: var(--f-ratio-lg);
+  --f-lg-2: var(--f-ratio-lg) * var(--f-lg-1);
+  --f-lg-3: var(--f-ratio-lg) * var(--f-lg-2);
+  --f-lg-4: var(--f-ratio-lg) * var(--f-lg-3);
+  --f-lg-5: var(--f-ratio-lg) * var(--f-lg-4);
+  --f-lg-6: var(--f-ratio-lg) * var(--f-lg-5);
+
+  --fluid-0: 1rem;
+  --fluid-1: calc(
+    1rem * var(--f-sm-1) + var(--f-font-ratio) * (var(--f-lg-1) - var(--f-sm-1))
+  );
+  --fluid-2: calc(
+    1rem * var(--f-sm-2) + var(--f-font-ratio) * (var(--f-lg-2) - var(--f-sm-2))
+  );
+  --fluid-3: calc(
+    1rem * var(--f-sm-3) + var(--f-font-ratio) * (var(--f-lg-3) - var(--f-sm-3))
+  );
+  --fluid-4: calc(
+    1rem * var(--f-sm-4) + var(--f-font-ratio) * (var(--f-lg-4) - var(--f-sm-4))
+  );
+  --fluid-5: calc(
+    1rem * var(--f-sm-5) + var(--f-font-ratio) * (var(--f-lg-5) - var(--f-sm-5))
+  );
+  --fluid-6: calc(
+    1rem * var(--f-sm-6) + var(--f-font-ratio) * (var(--f-lg-6) - var(--f-sm-6))
+  );
+}
