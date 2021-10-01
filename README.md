@@ -75,4 +75,4 @@ h1 {
 
 ## Documentation
 
-- Examples - TODO
+- [Examples](https://codesandbox.io/s/hornbeck-fluid-typography-x2myd?file=/src/styles.css)
