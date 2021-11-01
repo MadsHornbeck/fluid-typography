@@ -1,60 +1,70 @@
 :root {
-  --f-width-sm: 24; /* em */
-  --f-width-lg: 90; /* em */
-  --f-font-sm: 1; /* rem */
-  --f-font-lg: 1.5; /* rem */
-  --f-ratio-sm: 1.125;
-  --f-ratio-lg: 1.25;
+  --ft-width-min: 24; /* em */
+  --ft-width-max: 90; /* em */
+  --ft-font-min: 1; /* rem */
+  --ft-font-max: 1.5; /* rem */
+  --ft-ratio-min: 1.125;
+  --ft-ratio-max: 1.25;
 }
 
 :root {
-  --f-screen: clamp(var(--f-width-sm) * 1em, 100vmin, var(--f-width-lg) * 1em);
-  --f-lerp: calc(
-    (var(--f-screen) - (var(--f-width-sm) * 1em)) /
-      (var(--f-width-lg) - var(--f-width-sm))
+  --ft-screen: clamp(
+    var(--ft-width-min) * 1em,
+    100vmin,
+    var(--ft-width-max) * 1em
+  );
+  --ft-lerp: calc(
+    (var(--ft-screen) - (var(--ft-width-min) * 1em)) /
+      (var(--ft-width-max) - var(--ft-width-min))
   );
   font-size: calc(
-    var(--f-font-sm) * 1em + (var(--f-font-lg) - var(--f-font-sm)) *
-      var(--f-lerp)
+    var(--ft-font-min) * 1em + (var(--ft-font-max) - var(--ft-font-min)) *
+      var(--ft-lerp)
   );
   min-height: 0vw; /* Safari fix */
 
-  --f-font-ratio: min(
-    var(--f-lerp) * var(--f-ratio-lg) * var(--f-font-lg),
+  --ft-font-ratio: min(
+    var(--ft-lerp) * var(--ft-ratio-max) * var(--ft-font-max),
     1rem
   );
 
-  --f-sm-1: var(--f-ratio-sm);
-  --f-sm-2: var(--f-ratio-sm) * var(--f-sm-1);
-  --f-sm-3: var(--f-ratio-sm) * var(--f-sm-2);
-  --f-sm-4: var(--f-ratio-sm) * var(--f-sm-3);
-  --f-sm-5: var(--f-ratio-sm) * var(--f-sm-4);
-  --f-sm-6: var(--f-ratio-sm) * var(--f-sm-5);
+  --ft-min-1: var(--ft-ratio-min);
+  --ft-min-2: var(--ft-ratio-min) * var(--ft-min-1);
+  --ft-min-3: var(--ft-ratio-min) * var(--ft-min-2);
+  --ft-min-4: var(--ft-ratio-min) * var(--ft-min-3);
+  --ft-min-5: var(--ft-ratio-min) * var(--ft-min-4);
+  --ft-min-6: var(--ft-ratio-min) * var(--ft-min-5);
 
-  --f-lg-1: var(--f-ratio-lg);
-  --f-lg-2: var(--f-ratio-lg) * var(--f-lg-1);
-  --f-lg-3: var(--f-ratio-lg) * var(--f-lg-2);
-  --f-lg-4: var(--f-ratio-lg) * var(--f-lg-3);
-  --f-lg-5: var(--f-ratio-lg) * var(--f-lg-4);
-  --f-lg-6: var(--f-ratio-lg) * var(--f-lg-5);
+  --ft-max-1: var(--ft-ratio-max);
+  --ft-max-2: var(--ft-ratio-max) * var(--ft-max-1);
+  --ft-max-3: var(--ft-ratio-max) * var(--ft-max-2);
+  --ft-max-4: var(--ft-ratio-max) * var(--ft-max-3);
+  --ft-max-5: var(--ft-ratio-max) * var(--ft-max-4);
+  --ft-max-6: var(--ft-ratio-max) * var(--ft-max-5);
 
   --fluid-0: 1rem;
   --fluid-1: calc(
-    1rem * var(--f-sm-1) + var(--f-font-ratio) * (var(--f-lg-1) - var(--f-sm-1))
+    1rem * var(--ft-min-1) + var(--ft-font-ratio) *
+      (var(--ft-max-1) - var(--ft-min-1))
   );
   --fluid-2: calc(
-    1rem * var(--f-sm-2) + var(--f-font-ratio) * (var(--f-lg-2) - var(--f-sm-2))
+    1rem * var(--ft-min-2) + var(--ft-font-ratio) *
+      (var(--ft-max-2) - var(--ft-min-2))
   );
   --fluid-3: calc(
-    1rem * var(--f-sm-3) + var(--f-font-ratio) * (var(--f-lg-3) - var(--f-sm-3))
+    1rem * var(--ft-min-3) + var(--ft-font-ratio) *
+      (var(--ft-max-3) - var(--ft-min-3))
   );
   --fluid-4: calc(
-    1rem * var(--f-sm-4) + var(--f-font-ratio) * (var(--f-lg-4) - var(--f-sm-4))
+    1rem * var(--ft-min-4) + var(--ft-font-ratio) *
+      (var(--ft-max-4) - var(--ft-min-4))
   );
   --fluid-5: calc(
-    1rem * var(--f-sm-5) + var(--f-font-ratio) * (var(--f-lg-5) - var(--f-sm-5))
+    1rem * var(--ft-min-5) + var(--ft-font-ratio) *
+      (var(--ft-max-5) - var(--ft-min-5))
   );
   --fluid-6: calc(
-    1rem * var(--f-sm-6) + var(--f-font-ratio) * (var(--f-lg-6) - var(--f-sm-6))
+    1rem * var(--ft-min-6) + var(--ft-font-ratio) *
+      (var(--ft-max-6) - var(--ft-min-6))
   );
 }

@@ -1,4 +1,4 @@
-# @hornbeck/react-carousel
+# @hornbeck/fluid-typography
 
 ![npm](https://img.shields.io/npm/v/@hornbeck/fluid-typography)
 ![npm](https://img.shields.io/npm/l/@hornbeck/fluid-typography)
@@ -14,6 +14,10 @@ Simple configurable fluid typography and dynamic modular font scale in pure css.
 npm install --save @hornbeck/fluid-typography
 ```
 
+## Example
+
+- [codesandbox](https://codesandbox.io/s/hornbeck-fluid-typography-x2myd?file=/src/styles.css)
+
 ## Usage
 
 Import the stylesheet in your solution.
@@ -27,21 +31,21 @@ Change base configuation variables if needed:
 ```css
 :root {
   /* Point where the smallest font size and scale should be used */
-  --f-width-sm: 24; /* em */
+  --ft-width-min: 24; /* em */
   /* Point where the largest font size and scale should be used */
-  --f-width-lg: 90; /* em */
+  --ft-width-max: 90; /* em */
   /* Minimum font size on the :root element, in rem */
-  --f-font-sm: 1; /* rem */
+  --ft-font-min: 1; /* rem */
   /* Maximum font size on the :root element, in rem */
-  --f-font-lg: 1.5; /* rem */
+  --ft-font-max: 1.5; /* rem */
   /* The modular scale used at the smallest point */
-  --f-ratio-sm: 1.125;
+  --ft-ratio-min: 1.125;
   /* The modular scale used at the largest point */
-  --f-ratio-lg: 1.25;
+  --ft-ratio-max: 1.25;
 }
 ```
 
-Set use the fluid sizes in your css:
+Use the fluid sizes in your css for e.g. your `font-size` or `margin`:
 
 ```css
 p {
@@ -72,7 +76,3 @@ h1 {
   font-size: var(--fluid-6);
 }
 ```
-
-## Documentation
-
-- [Examples](https://codesandbox.io/s/hornbeck-fluid-typography-x2myd?file=/src/styles.css)
